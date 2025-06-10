@@ -1,0 +1,129 @@
+\chapter{\IfLanguageName{dutch}{Stand van zaken}{State of the art}}%
+\label{ch:stand-van-zaken}
+
+% Tip: Begin elk hoofdstuk met een paragraaf inleiding die beschrijft hoe
+% dit hoofdstuk past binnen het geheel van de graduaatsproef. Geef in het
+% bijzonder aan wat de link is met het vorige en volgende hoofdstuk.
+
+% Pas na deze inleidende paragraaf komt de eerste sectiehoofding.
+
+% In C++, declarations usually go 
+% into header files, typically with extension .h, while definitions usually go into source files, typically 
+% with extension .cpp.
+
+C++ maakt gebruik van verschillende filetypes zoals header files (\texttt{.h} of \texttt{.hpp}) en source files (\texttt{.cpp}).
+Header files bevatten de declaraties van functies, klassen, variabelen en interfaces. De source files zijn de definities van de headerfiles en bevatten de implementatie van de functies en methodes.
+Source files worden gecompileerd naar object files (\texttt{.o} of \texttt{.obj}), die vervolgens worden gelinkt om een uitvoerbaar bestand te maken.
+Waarom dit gedaan wordt, is om de code beter te organiseren en herbruikbaarheid te bevorderen. Door de scheiding van declaraties en implementaties kunnen verschillende delen van een programma onafhankelijk worden ontwikkeld en gecompileerd.
+\\
+
+Helemaal in het begin van een C++-programma staat de \texttt{\#include}-directive, die aangeeft welke header files moeten worden opgenomen.
+Dit wordt anders gedaan dan in C\#, waar de \texttt{using}-directive wordt gebruikt om namespaces te importeren.
+De implementatie van zelfgeschreven klassen gebruiken de headerfile "" terwijl de standaardbibliotheek van C++ gebruik maakt van <> voor andere packages.
+Voor Unreal Engine is het echter anders, de standaardbibliotheek wordt er niet gebruikt.
+Dit komt door de geschiedenis van de taal. In de jaren 90 werden de standaardbibliotheken geintruduceert.
+Rond dezelfde tijd werd ook de Unreal Engine ontwikkeld. 
+De standaardbibliotheek maakte toen gebuik van nieuwe features van C++. 
+Het was een probleem want sommige features werden niet goed getest en de kans ontstond dat de code niet werkte zoals verwacht.
+Daarnaast waren de bibliotheken slecht geimplementeerd, hadden ze veel bugs en waren ze heel controversieel.
+Als gevolg kozen ze ervoor om de standaardbibliotheek niet te gebruiken en in plaats daarvan hun eigen bibliotheek te ontwikkelen.
+
+\\
+
+De data types in C++ zijn niet zo uitgebreid als in C\#, maar de basis types zoals \texttt{int}, \texttt{float}, \texttt{double} en \texttt{char} zijn aanwezig.
+C++ heeft ook een \texttt{string}-type, maar dit is niet zo uitgebreid als in C\#. In C++ worden strings vaak behandeld als arrays van tekens, wat kan leiden tot meer complexiteit bij het werken met strings.
+Er moet van de standaardbibliotheek de string header file worden opgenomen om met strings te werken.
+Dictionaries en lijsten zijn in C++ niet ingebouwd in de taal zoals ze zijn in C\#. In plaats daarvan worden ze vaak geïmplementeerd met behulp van arrays of de STL (Standard Template Library).
+\\
+
+Wat er ook anders is in C++ is dat een klasse kan overerven van meerdere klassen, wat niet mogelijk is in C\#. Dit lijkt mij bijzonder nuttig. Zolang de 2 klassen geen namen hebben die hetzelfde zijn, kan er geen verwarring ontstaan.
+
+
+Unreal Engine maakt gebruik van een andere manier van classen en objecten dan C++. In Unreal Engine worden klassen gedefinieerd met behulp van de \texttt{UCLASS}-macro, die aangeeft dat de klasse een Unreal Engine-klasse is.
+Tijdens mijn onderzoek waren er enkele problemen die ervoor zorgden dat ik niet verder kon met het project.
+Verschillende keren moest ik de hele project opnieuw opbouwen omdat hij de classen niet kon terugvinden.
+Dan was er ook het probleem dat Visual Studio Enterprise soms bestanden verstopte van mij, waardoor ik dacht dat ze helemaal verdwenen waren.
+Het probleem was dat de klassen moesten worden toegevoegd via de Unreal Engine Editor, anders werden ze niet herkend door de engine.
+Het is hoogst waarschijnlijk dat dit op een andere manier kan worden opgelost, maar ik heb er niet veel tijd in gestoken om het uit te zoeken.
+\\
+
+Het project moest ik meerdere keren opnieuw herstarten omdat ik iets nieuws vond en het moest toepassen.
+De huidige structuur werkte niet mee met het idee, dus er waren stukken van code die opnieuw schreef.
+\\
+Andere momenten waren er problemen met het crashen van ofwel Unreal Engine of Visual Studio.
+De programma's laden heel traag, en daarbij was het niet zeldzaam dat er af en toe een crash gebeurde.
+\\
+
+Voor mijn project had ik ervoor gekozen om design patterns te gebruiken.
+Daarvoor werd er eerst grondig onderzoek gedaan naar welke design patterns nuttig zouden zijn .
+Documentatie werd geraadpleegd tijdens mijn literatuurstudie hierover in C++.
+Zo wordt er bijvoorbeeld gebruik gemaakt van de Simple Factory Pattern, voor items zoals wapens en voedsel.
+Dan is er ook de Observer Pattern, die ervoor zorgt dat de UI altijd up-to-date is met de laatste informatie van de speler.
+De Factory Method Pattern wordt gebruikt om verschillende soorten vijanden te maken, afhankelijk van de situatie.
+
+Naast de reeds genoemde patterns, zijn er nog andere die zeer nuttig kunnen zijn in Unreal Engine:
+
+De \textbf{Component Pattern} is handig om gameobjecten flexibel samen te stellen uit verschillende herbruikbare componenten, zoals gezondheid, beweging, of inventaris. Unreal Engine gebruikt dit principe zelf in zijn Actor Component systeem.
+
+De \textbf{Command Pattern} kan worden ingezet om acties van de speler of AI te encapsuleren als objecten. Dit is nuttig voor het implementeren van undo/redo functionaliteit, het opslaan en later uitvoeren van commando's (bv. voor replays of AI-planning), of het ontkoppelen van de actie-uitvoerder van de actie-initiator.
+
+De \textbf{Strategy Pattern} maakt het mogelijk om algoritmes of gedrag uit te wisselen tijdens runtime, bijvoorbeeld voor verschillende bewegingspatronen van vijanden of AI.
+
+De \textbf{Decorator Pattern} kan gebruikt worden om dynamisch extra functionaliteit toe te voegen aan objecten, zoals power-ups of tijdelijke effecten bij een speler of vijand.
+
+De \textbf{Service Locator Pattern} biedt een alternatieve manier om globale services (zoals audio, input, of logging) toegankelijk te maken zonder overal afhankelijkheden te injecteren.
+
+Deze patronen helpen om de code schaalbaar, onderhoudbaar en uitbreidbaar te houden, zeker bij grotere projecten in Unreal Engine.
+\\
+
+Tegelijkertijd probeerde ik de taal en de engine te leren kennen.
+Ik heb ervoor gezorgd dat ik niet blind code overneem van anderen, maar dat de code ook klopte en dat ik het begreep.
+Meestal schreef ik zelf de code omdat de tutorials niet altijd duidelijk waren en ze meestal blueprints gebruiken.
+Als ik wel blueprints gebruikte dan was het voor de visuele representatie van de code.
+Er werd ervoor gezorgd dat de meeste delen van de code in C++ werden geschreven.
+\\
+
+Daarnaast is er ook een inventory systeem gemaakt, dat ervoor zorgt dat de speler items kan verzamelen en gebruiken.
+
+
+
+
+
+% \textcite{Knuth1998} schreef een van de standaardwerken over sorteer- en zoekalgoritmen. Experten zijn het erover eens dat cloud computing een interessante opportuniteit vormen, zowel voor gebruikers als voor dienstverleners op vlak van informatietechnologie~\autocite{Creeger2009}.
+
+% Let er ook op: het \texttt{cite}-commando voor de punt, dus binnen de zin. Je verwijst meteen naar een bron in de eerste zin die erop gebaseerd is, dus niet pas op het einde van een paragraaf.
+
+% \begin{figure}
+%   \centering
+%   \includegraphics[width=0.8\textwidth]{grail.jpg}
+%   \caption[Voorbeeld figuur.]{\label{fig:grail}Voorbeeld van invoegen van een figuur. Zorg altijd voor een uitgebreid bijschrift dat de figuur volledig beschrijft zonder in de tekst te moeten gaan zoeken. Vergeet ook je bronvermelding niet!}
+% \end{figure}
+
+% \begin{listing}
+%   \begin{minted}{python}
+%     import pandas as pd
+%     import seaborn as sns
+
+%     penguins = sns.load_dataset('penguins')
+%     sns.relplot(data=penguins, x="flipper_length_mm", y="bill_length_mm", hue="species")
+%   \end{minted}
+%   \caption[Voorbeeld codefragment]{Voorbeeld van het invoegen van een codefragment.}
+% \end{listing}
+
+% \lipsum[7-20]
+
+% \begin{table}
+%   \centering
+%   \begin{tabular}{lcr}
+%     \toprule
+%     \textbf{Kolom 1} & \textbf{Kolom 2} & \textbf{Kolom 3} \\
+%     $\alpha$         & $\beta$          & $\gamma$         \\
+%     \midrule
+%     A                & 10.230           & a                \\
+%     B                & 45.678           & b                \\
+%     C                & 99.987           & c                \\
+%     \bottomrule
+%   \end{tabular}
+%   \caption[Voorbeeld tabel]{\label{tab:example}Voorbeeld van een tabel.}
+% \end{table}
+

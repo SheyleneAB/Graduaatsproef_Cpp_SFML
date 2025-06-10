@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Header Files\Food">
+      <UniqueIdentifier>{299d0e33-7c82-490a-b07d-7ac914520b0a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Food">
+      <UniqueIdentifier>{17372a88-236c-4066-86c5-34808a23e824}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Weapon">
+      <UniqueIdentifier>{9b87db86-cf4e-4faa-bbc0-b2c86d63d53e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Enemy">
+      <UniqueIdentifier>{0bce76dc-f199-4de8-9338-b24119ea1cf7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Enemy">
+      <UniqueIdentifier>{8c077954-6e9f-4d5c-9363-5e6ca811520c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Weapon">
+      <UniqueIdentifier>{38e3c301-b102-492b-afb6-aeebc8eba5a8}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\SFML_Eindproject\Player.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Food\Header\Bread.h">
+      <Filter>Header Files\Food</Filter>
+    </ClInclude>
+    <ClInclude Include="Food\Header\Pie.h">
+      <Filter>Header Files\Food</Filter>
+    </ClInclude>
+    <ClInclude Include="Food\Header\Donut.h">
+      <Filter>Header Files\Food</Filter>
+    </ClInclude>
+    <ClInclude Include="Food\Header\Food.h">
+      <Filter>Header Files\Food</Filter>
+    </ClInclude>
+    <ClInclude Include="Weapon\Header\Weapon.h">
+      <Filter>Header Files\Weapon</Filter>
+    </ClInclude>
+    <ClInclude Include="Weapon\Header\Sword.h">
+      <Filter>Header Files\Weapon</Filter>
+    </ClInclude>
+    <ClInclude Include="Weapon\Header\Stick.h">
+      <Filter>Header Files\Weapon</Filter>
+    </ClInclude>
+    <ClInclude Include="Weapon\Header\Knife.h">
+      <Filter>Header Files\Weapon</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemy\Header\Enemy.h">
+      <Filter>Header Files\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemy\Header\Skeleton.h">
+      <Filter>Header Files\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemy\Header\BadGuy.h">
+      <Filter>Header Files\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemy\Header\VeryBadGuy.h">
+      <Filter>Header Files\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="Weapon\Header\WeaponFactory.h">
+      <Filter>Header Files\Weapon</Filter>
+    </ClInclude>
+    <ClInclude Include="Food\Header\FoodFactory.h">
+      <Filter>Header Files\Food</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemy\Header\EnemyFactory.h">
+      <Filter>Header Files\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="GameData\Inventory.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\SFML_Eindproject\Player.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Food\Implementation\Donut.cpp">
+      <Filter>Source Files\Food</Filter>
+    </ClCompile>
+    <ClCompile Include="Food\Implementation\Food.cpp">
+      <Filter>Source Files\Food</Filter>
+    </ClCompile>
+    <ClCompile Include="Food\Implementation\Pie.cpp">
+      <Filter>Source Files\Food</Filter>
+    </ClCompile>
+    <ClCompile Include="Food\Implementation\Bread.cpp">
+      <Filter>Source Files\Food</Filter>
+    </ClCompile>
+    <ClCompile Include="Enemy\Implementation\BadGuy.cpp">
+      <Filter>Source Files\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="Enemy\Implementation\Enemy.cpp">
+      <Filter>Source Files\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="Enemy\Implementation\Skeleton.cpp">
+      <Filter>Source Files\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="Enemy\Implementation\VeryBadGuy.cpp">
+      <Filter>Source Files\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="Weapon\Implementation\Knife.cpp">
+      <Filter>Source Files\Weapon</Filter>
+    </ClCompile>
+    <ClCompile Include="Weapon\Implementation\Sword.cpp">
+      <Filter>Source Files\Weapon</Filter>
+    </ClCompile>
+    <ClCompile Include="Weapon\Implementation\Stick.cpp">
+      <Filter>Source Files\Weapon</Filter>
+    </ClCompile>
+    <ClCompile Include="Weapon\Implementation\Weapon.cpp">
+      <Filter>Source Files\Weapon</Filter>
+    </ClCompile>
+    <ClCompile Include="Weapon\Implementation\WeaponFactory.cpp">
+      <Filter>Source Files\Weapon</Filter>
+    </ClCompile>
+    <ClCompile Include="Food\Implementation\FoodFactory.cpp">
+      <Filter>Source Files\Food</Filter>
+    </ClCompile>
+    <ClCompile Include="Enemy\Implementation\EnemyFactory.cpp">
+      <Filter>Source Files\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="GameData\Inventory.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
